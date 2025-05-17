@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoPro - STL Deque</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="css/idk1.css">
+    <link rel="shortcut icon" href="images/logo-light.png" type="image/x-icon"> 
+</head>
+<body class="scroll-container">
+    <div id="id01" class="modal">
+        <div>
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+          </div>
+        <form class="modal-content animate" action="/action_page.php" method="post">
+          <div class="container">
+            <h1 class="hero-heading text-xxl">Înregistrare</h1>
+            <label class="text-md" for="email"><b>E-mail</b></label>
+            <input class="text-md" type="text" placeholder="Introduceti e-mail-ul" name="uname" required>
+            <p><br></p>
+            <label class="text-md" for="psw"><b>Parola</b></label><span class="psw">   Forgot <a href="#" style="color: #2fb30f">password?</a></span>
+            <input class="text-md"type="password" placeholder="Introduceti parola" name="psw" required>
+            <p><br></p>
+            <label class="text-md">
+                <input type="checkbox" checked="checked" name="remember"> Ține-mă logat pe acest browser
+              </label>
+              <p><br></p>
+            <a class="text-md btn btn-primary " style="float:right">Continuă</a>
+            <a class="text-md btn btn-dark p" type="button" onclick="document.getElementById('id01').style.display='none'" style="position: relative; float:right">Anulează</a> 
+            <p><br></p>
+            <p><br></p>
+          </div>
+        </form>
+      </div>  
+    <button onclick="topFunction()" id="myBtn" title="Go to top" class="text-lg"> <i class="fa-solid fa-arrow-up"></i> Top </button>
+    <nav class="navbar">
+        <div class="container"> 
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/image-removebg-preview.png" alt="logo">
+                </a>
+            </div>
+            
+            <div class="main-menu">
+                <ul>
+                    <li>
+                        <img src="images/cpp_logo.png" class="cpp">
+                    </li>
+                    <li>
+                        <a href="stl_vector.html">STL Vector</a>
+                    </li>
+                    <li>
+                        <a href="map.html">STL Map</a>
+                    </li>
+                    <li>
+                        <a href="queue.html">STL Queue</a>
+                    </li>
+                    <li>
+                        <a href="deque.html">STL Deque</a>
+                    </li>
+                    <li>
+                        <li>
+                            <a class="btn btn-dark" onclick="document.getElementById('id01').style.display='block'"><i class="fas fa-user"></i> Log In </a>
+                        </li>
+                    </li>
+                    <li>
+                        <a class="btn btn-primary " href="signup.html">
+                            <i class="fas fa-user"></i> Sign up
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Hamburger Button-->
+            <button class="hamburger-button">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </button>
+            <div class="mobile-menu">
+                <ul>
+                    <li>
+                        <img src="images/cpp_logo.png" class="cpp">
+                    </li>
+                    <li>
+                        <a href="stl_vector.html">STL Vector</a>
+                    </li>
+                    <li>
+                        <a href="map.html">STL Map</a>
+                    </li>
+                    <li>
+                        <a href="queue.html">STL Queue</a>
+                    </li>
+                    <li>
+                        <a href="deque.html">STL Deque</a>
+                    </li>
+                    <li>
+                        <li>
+                            <a class="btn btn-dark" onclick="document.getElementById('id01').style.display='block'"><i class="fas fa-user"></i> Log In </a>
+                        </li>
+                    </li>
+                    <li>
+                        <a class="btn btn-primary " href="signup.html">
+                            <i class="fas fa-user"></i> Sign up
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-heading text-xxl">
+                    Deque (double ended queue) din C++
+                </h1>
+                
+                <p class="text-lg">
+                    <b>Cuprins</b>
+                </p>
+                <img align="right" style="top: 20px " src="images/anod.png" class="img3">
+                <ul class="list1">
+                    <li class="text-md">
+                        Complexități
+                    </li>
+                    <li class="text-md">
+                        Tabel cu toate funcțiile din cadrul deque
+                    </li>
+                </ul>
+                
+                <p><br></p>
+                <p><br></p>
+                <p><br></p>
+                <p><br></p>
+                <div>
+                    <p class="text-md">
+                        Cozile cu două capete sunt containere de secvențe ce se caracterizeaza prin o extindere și contracție la ambele capete. Ele sunt asemănătoare vectorilor, dar sunt mai eficiente în cazul inserării și ștergerii elementelor. Spre deosebire de vectori, este posibil ca alocarea de stocare contiguă să nu fie garantată. Cozile de aşteptare duble sunt practic o implementare a structurii de date cozi de aşteptare dublu.
+                    </p>
+                    <p><br></p>
+                    <p class="text-md">
+                        O structură de date în coadă permite inserarea doar la sfârșit și ștergerea din față. Poate fi percepută ca o coadă în viața reală, în care oamenii sunt înlăturați din față și adăugați în spate. Cozile cu două capete sunt un caz special de cozi în care operațiunile de inserare și ștergere sunt posibile la ambele capete.
+                    </p>
+                    <p><br></p>
+                    <p class="text-md">
+                        Funcțiile pentru deque sunt aceleași ca la <a href="queue.html" style="color: #2fb30f">cozile</a> clasice, cu o adăugare de operații push și pop atât pentru față, cât și pentru spate. Pentru declararea unei cozi cu două capete trebuie inclusă biblioteca <b><code><</code>deque></b>, unde se află funcții de manipulare a acestui container
+                    </p>
+                </div>
+                <h2 class="text-lg">
+                    <b>1. Complexități</b>
+                </h2>
+                <p class="text-md">🟩 Accesarea elementelor - O(1)</p>
+                    
+                <p class="text-md">🟩 Introducerea sau îndepărtarea elementelor - O(N)</p>
+                    
+                <p class="text-md">🟩 Introducerea sau îndepărtarea elementelor la început sau la sfârșit - O(1)</p>
+                
+                <h2 class="text-lg">
+                    <b>2. Toate funcțiile importante ale clasei std::deque din C++</b>
+                </h2>
+                <table>
+                    <tr>
+                      <th><p><span class="text-md"><b>Funcția</b></span></p></th>
+                      <th><span class="text-md"><b>Descriere</b></span></th>
+                    </tr>
+                    <tr>
+                      <td style="color:#265f0c; text-align: center" class="text-md">insert()</td>
+                      <td style="text-align: center">Inserează un element</td>
+                     </tr>
+                      <tr>
+                        <td style="color:#265f0c; text-align: center" class="text-md">rbegin()</td>
+                        <td style="text-align: center" >Returnează un iterator inversat care indică spre ultimul element al deque-ului (începutul inversat)</td>
+                      </tr>
+                      <tr>
+                        <td style="color:#265f0c; text-align: center" class="text-md">rend()</td>
+                        <td style="text-align: center" >Returnează un iterator inversat care indică spre poziția înainte de începutul deque-ului (considerat sfârșitul inversat)</td>
+                      </tr>
+                      <tr>
+                        <td style="color:#265f0c; text-align: center" class="text-md">cbegin()</td>
+                        <td style="text-align: center">Returnează un iterator constant ce arată spre primul element al containerului. Iteratorul nu poat fi utilizat pentru a modifica, doar pentru a traversa deque-ul</td>
+                      </tr>
+                      <tr>
+                        <td style="color:#265f0c; text-align: center" class="text-md">max_size()</td>
+                        <td style="text-align: center" >Returnează numărul maxim de elemente pe care le poate conține un deque</td>
+                      </tr>
+                      <tr>
+                        <td style="color:#265f0c; text-align: center" class="text-md">assign()</td>
+                        <td style="text-align: center">Atribuie valori către același sau alt deque container</td>
+                      </tr>
+                      <tr>
+                        <td style="color:#265f0c; text-align: center" class="text-md">resize()</td>
+                        <td style="text-align: center">Funcție care schimbă lungimea deque-ului</td>
+                      </tr>
+                      <tr>
+                        <td style="color:#265f0c; text-align: center" class="text-md">push_back()</td>
+                        <td style="text-align: center">Este utilizată pentru a muta elemente într-un deque din spate</td>
+                      </tr>
+                      <tr>
+                        <td style="color:#265f0c; text-align: center" class="text-md">push_front()</td>
+                        <td style="text-align: center">Este utilizată pentru a muta elemente într-un deque din față</td>
+                      </tr>
+                      <tr>
+                        <td style="color:#265f0c; text-align: center" class="text-md">pop_back()</td>
+                        <td style="text-align: center">Este utilizată pentru a șterge elemente dintr-un deque din spate</td>
+                      </tr>
+                      <tr>
+                        <td style="color:#265f0c; text-align: center" class="text-md">pop_front()</td>
+                        <td style="text-align: center">Este utilizată pentru a șterge elemente dintr-un deque din față</td>
+                      </tr>
+                      <tr>
+                        <td style="color:#265f0c; text-align: center" class="text-md">back()</td>
+                        <td style="text-align: center">Este utilizată pentru a crea un punct de referință al ultimului element al deque container</td>
+                      </tr>
+                      <tr>
+                        <td style="color:#265f0c; text-align: center" class="text-md">front()</td>
+                        <td style="text-align: center">Este utilizată pentru a crea un punct de referință al primului element al deque container</td>
+                      </tr>
+                      <tr>
+                        <td style="color:#265f0c; text-align: center" class="text-md">clear()</td>
+                        <td style="text-align: center">Este utilizată pentru a șterge toate elementele din deque, lungimea devenind 0</td>
+                      </tr>
+                      <tr>
+                        <td style="color:#265f0c; text-align: center" class="text-md">erase()</td>
+                        <td style="text-align: center">Este utilizată pentru a șterge elemente dintr-un container de la o pozitie sau un interval specific</td>
+                      </tr>
+                      <tr>
+                        <td style="color:#265f0c; text-align: center" class="text-md">empty()</td>
+                        <td style="text-align: center">Este utilizată pentru a verifica daca deque containerul este gol sau nu</td>
+                      </tr>
+                      <tr>
+                        <td style="color:#265f0c; text-align: center" class="text-md">size()</td>
+                        <td style="text-align: center">Este utilizat pentru a returna lungimea unui deque container sau numarul de elemente ale acestuia</td>
+                      </tr>
+                      <tr>
+                        <td style="color:#265f0c; text-align: center" class="text-md">operator "="</td>
+                        <td style="text-align: center">Operatorul este utilizat pentru a atribui continut nou containerului, inlocuind continutul existent</td>
+                      </tr>
+                      <tr>
+                        <td style="color:#265f0c; text-align: center" class="text-md">operator "[]"</td>
+                        <td style="text-align: center">Operatorul este utilizat ca punct de referință al elementului prezent al poziției date în operator</td>
+                      </tr>
+                      <tr>
+                        <td style="color:#265f0c; text-align: center" class="text-md">at()</td>
+                        <td style="text-align: center">Este utilizată ca punct de referință al elementului prezent al poziției date ca parametru al funcții</td>
+                      </tr>
+                      <tr>
+                        <td style="color:#265f0c; text-align: center" class="text-md">swap()</td>
+                        <td style="text-align: center">Este utilizată pentru a interschimba conținutul unui deque cu conținutul altui deque de acelasi tip și lungime</td>
+                      </tr>
+                      <tr>
+                        <td style="color:#265f0c; text-align: center" class="text-md">begin()</td>
+                        <td style="text-align: center">Este utilizată pentru a returna un iterator ce arată spre primul element al unui deque container</td>
+                      </tr>
+                      <tr>
+                        <td style="color:#265f0c; text-align: center" class="text-md">end()</td>
+                        <td style="text-align: center">Este utilizată pentru a returna un iterator ce arată spre ultimul element al unui deque container</td>
+                      </tr>
+                      <tr>
+                        <td style="color:#265f0c; text-align: center" class="text-md">emplace_front()</td>
+                        <td style="text-align: center">Este utilizată pentru a insera un nou element in deque container. Noul element este adăugat la începutul deque-ului</td>
+                      </tr>
+                      <tr>
+                        <td style="color:#265f0c; text-align: center" class="text-md">emplace_back()</td>
+                        <td style="text-align: center">Este utilizată pentru a insera un nou element in deque container. Noul element este adăugat la finalul deque-ului</td>
+                      </tr>
+                  </table>
+                <p class="text-md">
+                    
+                </p>
+                <p class="hero text-xl">
+                    
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </section>
+
+   <!-- Footer -->
+   <footer class="footer bg-black">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <a href="index.html">
+                    <img src="images/logo-light-full.png" alt="logo">
+                </a>
+                <div class="card">
+                    <h4>Abonați-vă la Newsletter</h4>
+                    <p class="text-sm">
+                        Abonați-vă la newsletter pentru a fi la curent cu dezvoltarea acestui website.
+                    </p>
+                    <form>
+                        <input type="email" id="email" placeholder="Adresa dvs. de e-mail">
+                        <button type="submit" class="btn btn-primary btn-block">Continuă</button>
+                    </form>
+                </div>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+            </div>
+            <div>
+                <h4>Linkuri utile</h4>
+                <ul>
+                    <li><a href="X"><i class="fa-solid fa-bell"></i>Noutăți</a></li>
+                    <li><a href="X"><i class="fa-solid fa-square-poll-vertical"></i>Feedback</a></li>
+                    <li><a href="documentatie.html"><i class="fa-solid fa-book"></i>Documentație</a></li>
+                    <li><a href="X"><i class="fa-solid fa-users"></i>Alătură-te echipei</a></li>
+                </ul>
+            </div>
+            <div><h4>Alte informații</h4>
+                <ul>
+                    <li><a2>@COPYRIGHT 2024 INFOPRO</a2></li>
+                    <li><a2><i class="fa-solid fa-floppy-disk"></i>InfoPro v1.0 alpha</a2></li>
+                    <li><a href="X">Politica de confidențialitate</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4><i class="fa-solid fa-user-group"></i>Credits</h4>
+                <ul>
+                    <li>Platforma realizată de:</li>
+                    <li>◻️Nica Ștefan</li>
+                    <li>◻️Pojoga Christian</li>
+                </ul>
+                <h4><i class="fa-solid fa-envelope"></i>Contact</h4> 
+                <ul>
+                    <li><a href="nicastefan2406@gmail.com" onclick="copyURI(event)">nicastefan2406@gmail.com</a></li>
+                    <span id="custom-tooltip">copied!</span>
+                </ul>
+            </div>
+        </div>
+    </div>
+   </footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>

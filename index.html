@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoPro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="css/idk.css">
+    <link rel="shortcut icon" href="images/logo-light.png" type="image/x-icon"> 
+</head>
+<body class="scroll-container">
+    <div id="id01" class="modal">
+        <div>
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+          </div>
+        <form class="modal-content animate" action="/action_page.php" method="post">
+          <div class="container">
+            <h1 class="hero-heading text-xxl">Înregistrare</h1>
+            <label class="text-md" for="email"><b>E-mail</b></label>
+            <input class="text-md" type="text" placeholder="Introduceti e-mail-ul" name="uname" required>
+            <p><br></p>
+            <label class="text-md" for="psw"><b>Parola</b></label><span class="psw">   Forgot <a href="#" style="color: #2fb30f">password?</a></span>
+            <input class="text-md"type="password" placeholder="Introduceti parola" name="psw" required>
+            <p><br></p>
+            <label class="text-md">
+                <input type="checkbox" checked="checked" name="remember"> Ține-mă logat pe acest browser
+              </label>
+            <p><br></p>
+            <a class="text-md btn btn-primary " style="float:right">Continuă</a>
+            <a class="text-md btn btn-dark p" type="button" onclick="document.getElementById('id01').style.display='none'" style="position: relative; float:right">Anulează</a> 
+            <p><br></p>
+            <p><br></p>
+          </div>
+        </form>
+      </div>    
+    <nav class="navbar">
+        <div class="container"> 
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/image-removebg-preview.png" alt="logo">
+                </a>
+            </div>
+            
+            <div class="main-menu">
+                <ul>
+                    <li>
+                        <img src="images/cpp_logo.png" class="cpp">
+                    </li>
+                    <li>
+                        <a href="stl_vector.html">STL Vector</a>
+                    </li>
+                    <li>
+                        <a href="map.html">STL Map</a>
+                    </li>
+                    <li>
+                        <a href="queue.html">STL Queue</a>
+                    </li>
+                    <li>
+                        <a href="deque.html">STL Deque</a>
+                    </li>
+                    <li>
+                        <a class="btn btn-dark" onclick="document.getElementById('id01').style.display='block'"><i class="fas fa-user"></i> Log In </a>
+                    </li>
+                    <li>
+                        <a href="signup.html" class="btn btn-primary">
+                            <i class="fas fa-user"></i> Sign up
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Hamburger Button-->
+            <button class="hamburger-button">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </button>
+            <div class="mobile-menu">
+                <ul>
+                    <li>
+                        <img src="images/cpp_logo.png" class="cpp">
+                    </li>
+                    <li>
+                        <a href="stl_vector.html">STL Vector</a>
+                    </li>
+                    <li>
+                        <a href="map.html">STL Map</a>
+                    </li>
+                    <li>
+                        <a href="queue.html">STL Queue</a>
+                    </li>
+                    <li>
+                        <a href="deque.html">STL Deque</a>
+                    </li>
+                    <li>
+                        <a class="btn btn-dark" onclick="document.getElementById('id01').style.display='block'"><i class="fas fa-user"></i> Log In </a>
+                    </li>
+                    <li>
+                        <a class="btn btn-primary" href="signup.html">
+                            <i class="fas fa-user"></i> Sign up
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <div class="container">
+            <img align="right" src="images/61627205.jpg" class="img1">
+            <div class="hero-content">
+                <h1 class="hero-heading text-xxl">
+                    Bine ai venit pe InfoPro!
+                </h1>   
+                <p class="text-md">
+                    Platforma noastră pune la dispoziție articole despre cateva elemente de limbaj C++ care sunt utile pentru concursuri de programare competitivă și pentru rezolvarea mai rapidă a unor probleme. 
+                </p>
+                <p><br></p>
+                <p><br></p>
+                <p class="hero text-xl">
+                    Ce îmbunătățiri vrem să mai aducem website-ului:
+                    <ul class="list1">
+                        <li class="text-md">
+                            mai multe articole cu teorie;
+                        </li>
+                        <li class="text-md">
+                            pagini cu probleme din concursuri și de antrenament;
+                        </li>
+                        <li class="text-md">
+                            evaluator live și posibilitatea de a trimite surse;
+                        </li>
+                        <li class="text-md">
+                            conturi de utilizator;
+                        </li>
+                        <li class="text-md">
+                            articole ale comunitații;
+                        </li>
+                        <li class="text-md">
+                            alte implementări ce țin de interacțiunea user-user sau user-platformă.
+                        </li>
+                    </ul>
+                </p>
+                <p><br></p>
+            </div>
+        </div>
+    </section>
+
+   <!-- Footer -->
+   <footer class="footer bg-black">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <a href="index.html">
+                    <img src="images/logo-light-full.png" alt="logo">
+                </a>
+                <div class="card">
+                    <h4>Abonați-vă la Newsletter</h4>
+                    <p class="text-sm">
+                        Abonați-vă la newsletter pentru a fi la curent cu dezvoltarea acestui website.
+                    </p>
+                    <form>
+                        <input type="email" id="email" placeholder="Adresa dvs. de e-mail">
+                        <button type="submit" class="btn btn-primary btn-block">Continuă</button>
+                    </form>
+                </div>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+            </div>
+            <div>
+                <h4>Linkuri utile</h4>
+                <ul>
+                    <li><a href="X"><i class="fa-solid fa-bell"></i>Noutăți</a></li>
+                    <li><a href="X"><i class="fa-solid fa-square-poll-vertical"></i>Feedback</a></li>
+                    <li><a href="documentatie.html"><i class="fa-solid fa-book"></i>Documentație</a></li>
+                    <li><a href="X"><i class="fa-solid fa-users"></i>Alătură-te echipei</a></li>
+                </ul>
+            </div>
+            <div><h4>Alte informații</h4>
+                <ul>
+                    <li><a2>@COPYRIGHT 2024 INFOPRO</a2></li>
+                    <li><a2><i class="fa-solid fa-floppy-disk"></i>InfoPro v1.0 alpha</a2></li>
+                    <li><a href="X">Politica de confidențialitate</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4><i class="fa-solid fa-user-group"></i>Credits</h4>
+                <ul>
+                    <li>Platforma realizată de:</li>
+                    <li>◻️Nica Ștefan</li>
+                    <li>◻️Pojoga Christian</li>
+                </ul>
+                <h4><i class="fa-solid fa-envelope"></i>Contact</h4> 
+                <ul>
+                    <li><a href="nicastefan2406@gmail.com" onclick="copyURI(event)">nicastefan2406@gmail.com</a></li>
+                    <span id="custom-tooltip">copied!</span>
+                </ul>
+            </div>
+        </div>
+    </div>
+   </footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
