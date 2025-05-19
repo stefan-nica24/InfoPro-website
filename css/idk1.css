@@ -381,7 +381,7 @@ img {
         font-size: 0.9rem;
     }
     .modal-content {
-        height: 500px;
+        height: 500px !important;
       }
 }
 @media (max-width: 550px){
@@ -435,11 +435,6 @@ img {
         margin-right: auto;
     }
     
-}
-@media (max-width: 400px){
-    .modal-content{
-        width: 580px;
-    }
 }
 @media (max-height: 670px) {
     .img1{
@@ -536,8 +531,8 @@ td:first-child{
     background-color: #dfdfdf;
     width: 100px;
 }
-
 pre.code_cpp {
+    font-size: 1rem;
     position: relative;
     background-color: #e4e4e4;
     border-radius: 5px;

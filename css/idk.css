@@ -327,7 +327,7 @@ img {
 }
 @media (max-width: 4000px){
     .modal-content {
-        height: 550px !important; 
+        height: 500px !important; 
     }
 }
 @media (max-width: 850px){
@@ -401,7 +401,7 @@ img {
         font-size: 1.3rem !important;
     }
     .modal-content {
-        height: 550px !important
+        height: 500px !important
       }
       .logo_image{
         width: 90px;
@@ -410,11 +410,6 @@ img {
 @media (max-width: 470px){
     .img1{
         display: none;
-    }
-}
-@media (max-width: 400px){
-    .modal-content{
-        width: 580px;
     }
 }
 @media (max-height: 670px) {

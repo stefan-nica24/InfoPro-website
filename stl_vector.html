@@ -169,7 +169,7 @@
                     <b>1. Cum se declară vectorii în C++</b>
                 </h2>
                 <p><br></p>
-                    <pre class="code_cpp cm-s-default" data-lang="text/x-c++src" contenteditable="true" editable="true" style="font-size: 1rem"><code>std::vector</code><code><</code><code>tip_dată> nume_vector;</code></pre>
+                    <pre class="code_cpp cm-s-default" data-lang="text/x-c++src" contenteditable="true" editable="true"><code>std::vector</code><code><</code><code>tip_dată> nume_vector;</code></pre>
                     <p class="text-md">
                         Pentru declararea unui vector trebuie inclusă biblioteca <b><</b><b>vector></b> unde se află funcții de manipulare a acestui container.
                     </p>
@@ -189,7 +189,7 @@
                     <b>3. Parcurgerea vectorului și afișarea lui </b>
                 </h2>
                 <p><br></p>
-                    <pre class="code_cpp cm-s-default" data-lang="text/x-c++src" contenteditable="true" editable="true" style="font-size: 1rem">
+                    <pre class="code_cpp cm-s-default" data-lang="text/x-c++src" contenteditable="true" editable="true">
 <code>for(int i=0; i < v.size(); ++i) 
     cout<code><</code><code><</code>v[i]<code><</code><code><</code>' '; | cout<code><</code><code><</code>v.at(i)<code><</code><code><</code>' ';</code></pre>
                     <p class="text-md">
@@ -226,7 +226,7 @@
                 <h3 class="text-md">
                     Exemplu 
                 </h3>
-                <pre class="code_cpp cm-s-default" data-lang="text/x-c++src" contenteditable="true" editable="true" style="font-size: 1rem">
+                <pre class="code_cpp cm-s-default" data-lang="text/x-c++src" contenteditable="true" editable="true">
 <code>vector<code><</code>int> v;
 vector<code><</code>int>::iterator it;
 for(it=v.begin(); it!=v.end(); ++it) 
@@ -238,7 +238,7 @@ for(it=v.begin(); it!=v.end(); ++it)
                 <p class="text-md">
                     Se poate forța prin instrucțiunea auto să determine ce fel iterator este nevoie pentru a parcurge containerul.
                 </p>
-                <pre class="code_cpp cm-s-default" data-lang="text/x-c++src" contenteditable="true" editable="true" style="font-size: 1rem">
+                <pre class="code_cpp cm-s-default" data-lang="text/x-c++src" contenteditable="true" editable="true">
 <code>vector<code><</code>int> v;
 for(auto i : v)
     cout<code><</code><code><</code>i<code><</code><code><</code>' '; </code></pre>
@@ -248,9 +248,9 @@ for(auto i : v)
                 <p class="text-md">
                     Vectorul nu este obligatoriu să fie gol el poate să fie declarat cu un anumit număr de poziții exact cum s-ar face la cei statici și să fie modificate pe parcurs. De asemenea el are în componență un constructor care spune cu ce să umple fiecare poziție.
                 </p>
-                <pre class="code_cpp cm-s-default" data-lang="text/x-c++src" contenteditable="true" editable="true" style="font-size: 1rem">
+                <pre class="code_cpp cm-s-default" data-lang="text/x-c++src" contenteditable="true" editable="true">
 <code>vector<code><</code>int> v(100);    //Vector cu 100 de elemente cu pozitiile 0-99 si valoarea 0 implicită.</code></pre>
-<pre class="code_cpp cm-s-default" data-lang="text/x-c++src" contenteditable="true" editable="true" style="font-size: 1rem">
+<pre class="code_cpp cm-s-default" data-lang="text/x-c++src" contenteditable="true" editable="true">
 <code>vector<code><</code>int> v(100, 1);    //Vector cu 100 de elemente cu pozitiile 0-99 si valoarea 1.</code></pre>
                 <h2 class="text-lg">
                     <b>6. Ștergeri și inserări</b>
@@ -261,9 +261,9 @@ for(auto i : v)
                 <p class="text-md">
                     Exemplu:
                 </p>
-                <pre class="code_cpp cm-s-default" data-lang="text/x-c++src" contenteditable="true" editable="true" style="font-size: 1rem">
+                <pre class="code_cpp cm-s-default" data-lang="text/x-c++src" contenteditable="true" editable="true">
 <code>v.insert(v.begin()+2,10); </code></pre>
-                <pre class="code_cpp cm-s-default" data-lang="text/x-c++src" contenteditable="true" editable="true" style="font-size: 1rem">
+                <pre class="code_cpp cm-s-default" data-lang="text/x-c++src" contenteditable="true" editable="true">
 <code>v.erase(v.begin()+2); </code></pre>
                 <h2 class="text-lg">
                     <b>7. Redimensionarea</b>
