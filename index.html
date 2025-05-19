@@ -8,24 +8,30 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <link rel="stylesheet" href="css/idk.css">
     <link rel="shortcut icon" href="Images/logo-light.png" type="image/x-icon"> 
+    <!-- Tab image and page title -->
 </head>
 <body class="scroll-container">
     <div id="id01" class="modal">
-        <div>
-            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-          </div>
         <form class="modal-content animate" action="/action_page.php" method="post">
           <div class="container">
-            <h1 class="hero-heading text-xxl">Înregistrare</h1>
+            <div>
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            </div>
+            <p><br></p>
+            <h1 class="hero-heading text-xxl">Autentificare</h1>
+            <label class="text-md">Nu aveți cont? <a href="signup.html" class = "btn btn-secondary">Înregistrați-vă!</a></label>
+            <p><br></p>
             <label class="text-md" for="email"><b>E-mail</b></label>
+            
             <input class="text-md" type="text" placeholder="Introduceti e-mail-ul" name="uname" required>
-            <p><br></p>
-            <label class="text-md" for="psw"><b>Parola</b></label><span class="psw">   Forgot <a href="#" style="color: #2fb30f">password?</a></span>
+            <label class="text-md" ><b>Parolă</b></label>
+            <a class="psw text-sm" href="#" style="color: #2fb30f; float: right">Ați uitat parola?</a>
             <input class="text-md"type="password" placeholder="Introduceti parola" name="psw" required>
-            <p><br></p>
+            
+            
             <label class="text-md">
-                <input type="checkbox" checked="checked" name="remember"> Ține-mă logat pe acest browser
-              </label>
+                <input type="checkbox" checked="checked" name="remember"> Ține-mă logat pe acest browser.
+            </label>
             <p><br></p>
             <a class="text-md btn btn-primary " style="float:right">Continuă</a>
             <a class="text-md btn btn-dark p" type="button" onclick="document.getElementById('id01').style.display='none'" style="position: relative; float:right">Anulează</a> 
@@ -38,15 +44,12 @@
         <div class="container"> 
             <div class="logo">
                 <a href="index.html">
-                    <img src="Images/image-removebg-preview.png" alt="logo">
+                    <img class = "logo_image" src="Images/image-removebg-preview.png" alt="logo">
                 </a>
             </div>
             
             <div class="main-menu">
                 <ul>
-                    <li>
-                        <img src="Images/cpp_logo.png" class="cpp">
-                    </li>
                     <li>
                         <a href="stl_vector.html">STL Vector</a>
                     </li>
@@ -60,7 +63,7 @@
                         <a href="deque.html">STL Deque</a>
                     </li>
                     <li>
-                        <a class="btn btn-dark" onclick="document.getElementById('id01').style.display='block'"><i class="fas fa-user"></i> Log In </a>
+                        <a class="btn btn-dark" onclick="document.getElementById('id01').style.display='block'"><i class="fa-solid fa-unlock-keyhole"></i> Log In </a>
                     </li>
                     <li>
                         <a href="signup.html" class="btn btn-primary">
@@ -78,7 +81,19 @@
             <div class="mobile-menu">
                 <ul>
                     <li>
-                        <img src="Images/cpp_logo.png" class="cpp">
+                        <a class="btn btn-primary1 clsbtn">
+                            Inchide bara de navigare <i class="fa-sharp fa-solid fa-arrow-right"></i>   
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn btn-dark clsbtn1" onclick="document.getElementById('id01').style.display='block'">
+                            <i class="fas fa-unlock-keyhole"></i> Log In 
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn btn-primary" href="signup.html">
+                            <i class="fas fa-user"></i> Sign up
+                        </a>
                     </li>
                     <li>
                         <a href="stl_vector.html">STL Vector</a>
@@ -92,13 +107,10 @@
                     <li>
                         <a href="deque.html">STL Deque</a>
                     </li>
+                    
+                    
                     <li>
-                        <a class="btn btn-dark" onclick="document.getElementById('id01').style.display='block'"><i class="fas fa-user"></i> Log In </a>
-                    </li>
-                    <li>
-                        <a class="btn btn-primary" href="signup.html">
-                            <i class="fas fa-user"></i> Sign up
-                        </a>
+
                     </li>
                 </ul>
             </div>
@@ -178,7 +190,7 @@
             </div>
             <div><h4>Alte informații</h4>
                 <ul>
-                    <li><a2>@COPYRIGHT 2025 INFOPRO</a2></li>
+                    <li><a2>@COPYRIGHT 2026 INFOPRO</a2></li>
                     <li><a2><i class="fa-solid fa-floppy-disk"></i>InfoPro v1.0 alpha</a2></li>
                     <li><a href="X">Politica de confidențialitate</a></li>
                 </ul>

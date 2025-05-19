@@ -141,9 +141,19 @@ img {
     background: var(--primary--color);
     color: #fff;
 }
+.btn-secondary{
+    padding: 0;
+    border-radius: 0;
+    color: #2fb30f;
+    background: #fff;
+}
 .btn-dark {
     background: var(--dark--color);
     color: #fff;
+}
+.btn-primary1{
+    background: var(--light--color);
+    color: #333;
 }
 .btn-block {
     display: block;
@@ -152,31 +162,31 @@ img {
 
 /* Text Classes */
 .text-xxl {
-    font-size: 3rem;
+    font-size: 2.7rem !important;
     line-height: 1.2;
     font-weight: 600;
     margin: 40px 0 20px;
 }
 .text-xl {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
     line-height: 1.4;
     font-weight: normal;
     margin: 40px 0 20px;
 }
 .text-lg {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     line-height: 1.4;
     font-weight: normal;
     margin: 30px 0 20px;
 }
 .text-md {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 1.4;
     font-weight: normal;
     margin: 5px 5px;
 }
 .text-sm {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     line-height: 1.4;
     font-weight: normal;
     margin: 10px 0 5px;
@@ -237,12 +247,12 @@ img {
 .footer-grid {
     display: grid;
     grid-template-columns: 2fr 2fr 2fr 2fr;
-    gap: 30px;
+    gap: 15px;
     justify-content: center;
     align-items: center;
   }
 .footer .card {
-    margin: 20px 30px 30px 0;
+    margin: 20px 20px 30px 0px;
 }
 .footer input[type='email'] {
     width: 100%;
@@ -260,39 +270,35 @@ img {
   padding: 10px;
   z-index: 1000;
 }
-
+.logo_image{
+    width: 130px;
+}
 .hamburger-button .hamburger-line {
   width: 30px;
   height: 3px;
   background: #333;
   margin: 6px 0;
-}.hamburger-button {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  z-index: 1000;
 }
-
 /* Mobile Menu */
 .mobile-menu {
+    overflow: auto;
     position: fixed;
     top: 0;
     right: -300px;
-    width: 250px;
+    width: 200px;
     height: 100%;
     z-index: 100;
     background: #fff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    transition: right 0.3s ease-in-out;
+    transition: right 0.2s ease-in-out;
 }
 .mobile-menu.active {
     right: 0;
 }
 .mobile-menu ul { 
-    margin-top: 100px;
-    padding-right: 10px;
+    margin-top: 50px;
+    padding-right: 12px;
+    padding-left: 10px;
 }
 .mobile-menu ul li {
     margin: 10px 0 0;
@@ -301,33 +307,60 @@ img {
     font-size: 20px;
     transition: 0.3s;
 }
+
 /* Media Queries */
-@media (max-width: 960px) {
-    .text-xxl {
-        font-size: 2.5rem;
-    }
-}
-@media (max-width: 670px) {
+@media (max-width: 885px){
     .navbar .main-menu {
         display: none;
     }
-    .modal-content {
-        height: 100% !important
-      }
     .navbar .hamburger-button {
         display: block;
+    }
+    .hamburger-button.active{
+        display: block;
+    } 
+}
+@media (max-width: 960px) {
+    .text-xxl {
+        font-size: 2.5rem !important
+    }
+}
+@media (max-width: 4000px){
+    .modal-content {
+        height: 550px !important; 
+    }
+}
+@media (max-width: 850px){
+    .img2{
+        display: none;
+    }
+    .footer-grid { 
+        grid-template-columns: 1fr;
+    }
+    .footer .card {
+        margin-right: 100px;
+        margin-left: 100px;
+    }
+    .footer .footer-grid > div {
+        text-align: center;
+    }
+
+}
+@media (max-width: 670px) {
+    .hero-heading{
+        align-self: center;
     }
     .img1{
         height: 100px;
         width: auto;
     }
-    .img2{
-        padding-right: 100px; 
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 80%;
+    .logo_image{
+        width: 105px;
         height: auto;
+    }
+    .footer .card {
+        margin-right: 50px;
+        margin-left: 50px;
     }
     
     .hero .hero-content {
@@ -337,16 +370,77 @@ img {
     .hero .hero-content .list1{
         text-align: left;
     } 
-    .footer-grid { 
-        grid-template-columns: 1fr;
+    
+    .text-xxl{
+        font-size: 2.2rem !important;
     }
+    .text-xl {
+        font-size: 1.7rem;
+    }
+    .text-lg {
+        font-size: 1.4rem;
+    }
+    .text-md {
+        font-size: 0.9rem;
+    }
+    .modal-content {
+        height: 500px !important
+      }
+}
+@media (max-width: 550px){
     .footer .card {
-        margin-right: 0;
+        margin-right: 40px;
+        margin-left: 40px;
     }
-    .footer .footer-grid > div {
+}
+@media (max-width: 500px) {
+    .text-xxl {
+        font-size: 1.8rem !important;
+    }
+    .text-xl {
+        font-size: 1.3rem !important;
+    }
+    .modal-content {
+        height: 550px !important
+      }
+      .logo_image{
+        width: 90px;
+    }
+}
+@media (max-width: 470px){
+    .img1{
+        display: none;
+    }
+}
+@media (max-width: 400px){
+    .modal-content{
+        width: 580px;
+    }
+}
+@media (max-height: 670px) {
+    .img1{
+        width: 30%;
+        height: auto;
+    }
+    .logo_image{
+        width: 105px;
+        height: auto;
+    }
+    .img2{
+        padding-right: 100px; 
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        height: auto;
+    }
+    .hero .hero-content {
+        width: 100%;
         text-align: center;
     }
-
+    .hero .hero-content .list1{
+        text-align: left;
+    } 
     .text-xl {
         font-size: 1.9rem;
     }
@@ -356,16 +450,31 @@ img {
     .text-md {
         font-size: 1.1rem;
     }
-    
 }
-@media (max-width: 500px) {
+@media (max-height: 500px) {
     .text-xxl {
-        font-size: 2rem;
+        font-size: 1.8rem !important
     }
-        .modal-content {
-        height: 550px !important
-      }
+    .text-xxl{
+        font-size: 2.2rem !important;
+    }
+    .text-xl {
+        font-size: 1.8rem;
+    }
+    .text-lg {
+        font-size: 1.4rem;
+    }
+    .text-md {
+        font-size: 0.9rem;
+    }
+    .text.sm{
+        font-size: 0.8rem;
+    }
+      .logo_image{
+        width: 115px;
+    }
 }
+
 /* Table */
 table, th, td {
     border-collapse: collapse;
@@ -416,6 +525,7 @@ td:first-child{
   
   /* The Modal (background) */
   .modal {
+    overflow: auto;
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -423,25 +533,28 @@ td:first-child{
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     padding-top: 60px;
-    max-height: 10000px;
+    max-height: 1000px;
   }
   
   /* Modal Content/Box */
   .modal-content {
     background-color: #fefefe;
-    margin: 5% auto 15% auto; 
+    margin: 1% auto 15% auto; 
     border: 3px solid #888;
     width: 80%;
     height: 60%;
+    min-width: 300px;
+    max-width: 700px;
+    max-height: 600px;
+    min-height: 500px;
   }
   
   /* The Close Button (x) */
   .close {
-    position: absolute;
+    float: right;
     right: 25px;
     top: 0;
     color: #000;
@@ -457,8 +570,8 @@ td:first-child{
   
   /* Add Zoom Animation */
   .animate {
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
+    -webkit-animation: animatezoom 0.4s;
+    animation: animatezoom 0.4s
   }
   
   @-webkit-keyframes animatezoom {

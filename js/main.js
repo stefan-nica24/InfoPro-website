@@ -1,15 +1,45 @@
 //mobile menu
+function onClickOutside(ele, cb) {
+  document.addEventListener('click', event => {
+    if (!ele.contains(event.target)) 
+      cb();
+  });
+};
+function onClickInside(ele, cb) {
+  document.addEventListener('click', event => {
+    if (ele.contains(event.target)) 
+      cb();
+  });
+};
+function closeMobileMenu(hamburgerButton, mobileMenu){
+    mobileMenu.classList.toggle('active');
+    hamburgerButton.style.display = 'block';
+}
+function openMobileMenu(hamburgerButton, mobileMenu){
+  mobileMenu.classList.toggle('active');
+  hamburgerButton.style.display = 'none';
+}
 document.addEventListener('DOMContentLoaded', () => {
     const hamburgerButton = document.querySelector('.hamburger-button');
     const mobileMenu = document.querySelector('.mobile-menu');
+    const closebutton = document.querySelector('.clsbtn');
+    const closebutton1 = document.querySelector('.clsbtn1');
 
+    closebutton1.addEventListener('click', () => 
+        closeMobileMenu(hamburgerButton, mobileMenu));
+    closebutton.addEventListener('click', () => 
+        closeMobileMenu(hamburgerButton, mobileMenu));
     hamburgerButton.addEventListener('click', () => 
-        mobileMenu.classList.toggle('active'));
+        openMobileMenu(hamburgerButton, mobileMenu));
+    
+    //onClickInside(hamburgerButton, () => setTimeout(openMobileMenu(hamburgerButton, mobileMenu), 3000));
+    //onClickOutside(mobileMenu, () => openMobileMenu(hamburgerButton, mobileMenu));
 });
+
 let mybutton = document.getElementById("myBtn");
 window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+  if ((document.body.scrollTop > 20 || document.documentElement.scrollTop > 20)) {
     mybutton.style.display = "block";
   } else {
     mybutton.style.display = "none";
@@ -25,6 +55,7 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
 function copyURI(evt) {
   evt.preventDefault();
   navigator.clipboard.writeText(evt.target.getAttribute('href')).then(() => {
