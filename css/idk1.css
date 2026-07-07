@@ -149,6 +149,27 @@ img {
     display: block;
     width: 100%;  
 }
+
+/* Account messages */
+.account-message {
+    min-height: 24px;
+    margin: 10px 0 0;
+    font-weight: 600;
+}
+.account-message.success {
+    color: var(--primary--color);
+}
+.account-message.error {
+    color: #d93025;
+}
+.account-user-btn,
+.logout-btn {
+    cursor: pointer;
+}
+button.btn {
+    font-family: 'Poppins', sans-serif;
+}
+
 /* Text Classes */
 .text-xxl {
     font-size: 2.7rem !important;
@@ -303,11 +324,6 @@ img {
         font-size: 2.5rem !important;
     }   
 }
-@media (max-width: 4000px){
-    .modal-content {
-        height: 550px; 
-    }
-}
 @media (max-width: 850px){
     .footer-grid { 
         grid-template-columns: 1fr;
@@ -327,9 +343,9 @@ img {
     .navbar .hamburger-button {
         display: block;
     }
-    .hamburger-button.active{
-        display: block;
-    } 
+    .navbar .hamburger-button.menu-open {
+        display: none;
+    }
 }
 @media (max-width: 670px) {
     .hero-heading{
@@ -380,9 +396,6 @@ img {
     .text-md {
         font-size: 0.9rem;
     }
-    .modal-content {
-        height: 500px !important;
-      }
 }
 @media (max-width: 550px){
     .footer .card {
@@ -394,9 +407,6 @@ img {
     .text-xxl {
         font-size: 1.8rem;
     }
-      .modal-content {
-        height: 500px !important
-      }
         .logo_image{
         width: 90px;
     }
@@ -458,16 +468,6 @@ img {
     .hero .hero-content .list1{
         text-align: left;
     } 
-    
-    .text-xl {
-        font-size: 1.8rem;
-    }
-    .text-lg {
-        font-size: 1.5rem;
-    }
-    .text-md {
-        font-size: 1.1rem;
-    }
 }
 @media (max-height: 500px) {
     .text-xxl {
@@ -563,7 +563,7 @@ pre {
     margin: 24px 0 12px 0;
     position: relative;
   }
-  input[type=text], input[type=password] {
+  input[type=text], input[type=email], input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -596,6 +596,7 @@ pre {
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     padding-top: 60px;
+    max-height: 1000px;
   }
   
   /* Modal Content/Box */
@@ -604,11 +605,12 @@ pre {
     margin: 1% auto 15% auto; 
     border: 3px solid #888;
     width: 80%;
-    height: 60%;
+    height: auto;
     min-width: 300px;
     max-width: 700px;
-    max-height: 600px;
-    min-height: 500px;
+    max-height: calc(100vh - 80px);
+    min-height: 0;
+    overflow-y: auto;
   }
   
   /* The Close Button (x) */
@@ -674,3 +676,41 @@ pre {
       border-radius: 4px;
       color: #fff;
   }
+
+/* Login modal layout fix */
+#id01 .account-login-form.modal-content {
+    display: block;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: calc(100vh - 80px) !important;
+    overflow-y: auto;
+    padding-bottom: 24px;
+}
+#id01 .account-login-form > .container {
+    padding-bottom: 10px;
+}
+.account-login-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    clear: both;
+    margin-top: 20px;
+    width: 100%;
+}
+.account-login-actions .btn {
+    float: none !important;
+    position: static !important;
+    height: auto;
+    min-height: 50px;
+}
+@media (max-width: 500px) {
+    .account-login-actions {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+    .account-login-actions .btn {
+        width: 100%;
+    }
+}
