@@ -6,12 +6,12 @@
     <title>InfoPro - STL Map</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-    <link rel="stylesheet" href="css/idk1.css">
+    <link rel="stylesheet" href="css/idk1.css?v=4">
     <link rel="shortcut icon" href="Images/logo-light.png" type="image/x-icon"> 
 </head>
 <body class="scroll-container">
     <div id="id01" class="modal">
-        <form class="modal-content animate" action="/action_page.php" method="post">
+        <form class="modal-content animate account-login-form" novalidate>
           <div class="container">
             <div>
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -22,20 +22,20 @@
             <p><br></p>
             <label class="text-md" for="email"><b>E-mail</b></label>
             
-            <input class="text-md" type="text" placeholder="Introduceti e-mail-ul" name="uname" required>
+            <input class="text-md" type="email" placeholder="Introduceti e-mail-ul" name="uname" autocomplete="email" required>
             <label class="text-md" ><b>Parolă</b></label>
             <a class="psw text-sm" href="#" style="color: #2fb30f; float: right">Ați uitat parola?</a>
-            <input class="text-md"type="password" placeholder="Introduceti parola" name="psw" required>
+            <input class="text-md" type="password" placeholder="Introduceti parola" name="psw" autocomplete="current-password" required>
             
             
             <label class="text-md">
                 <input type="checkbox" checked="checked" name="remember"> Ține-mă logat pe acest browser.
             </label>
-            <p><br></p>
-            <a class="text-md btn btn-primary " style="float:right">Continuă</a>
-            <a class="text-md btn btn-dark p" type="button" onclick="document.getElementById('id01').style.display='none'" style="position: relative; float:right">Anulează</a> 
-            <p><br></p>
-            <p><br></p>
+            <p class="account-message login-message text-sm" aria-live="polite"></p>
+            <div class="account-login-actions">
+                <button type="button" class="text-md btn btn-dark p" onclick="document.getElementById('id01').style.display='none'">Anulează</button>
+                <button type="submit" class="text-md btn btn-primary">Continuă</button>
+            </div>
           </div>
         </form>
       </div>  
@@ -326,9 +326,8 @@ for(auto it : m)
             <div>
                 <h4><i class="fa-solid fa-user-group"></i>Credits</h4>
                 <ul>
-                    <li>Platforma realizată de:</li>
-                    <li>◻️Nica Ștefan</li>
-                    <li>◻️Pojoga Christian</li>
+                    <li>Platformă realizată de:</li>
+                    <li>    Nica Ștefan</li>
                 </ul>
                 <h4><i class="fa-solid fa-envelope"></i>Contact</h4> 
                 <ul>
@@ -340,6 +339,6 @@ for(auto it : m)
     </div>
    </footer>
     
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=4"></script>
 </body>
 </html>
