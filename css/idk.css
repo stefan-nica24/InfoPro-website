@@ -160,6 +160,27 @@ img {
     width: 100%;  
 }
 
+
+/* Account messages */
+.account-message {
+    min-height: 24px;
+    margin: 10px 0 0;
+    font-weight: 600;
+}
+.account-message.success {
+    color: var(--primary--color);
+}
+.account-message.error {
+    color: #d93025;
+}
+.account-user-btn,
+.logout-btn {
+    cursor: pointer;
+}
+button.btn {
+    font-family: 'Poppins', sans-serif;
+}
+
 /* Text Classes */
 .text-xxl {
     font-size: 2.7rem !important;
@@ -316,18 +337,13 @@ img {
     .navbar .hamburger-button {
         display: block;
     }
-    .hamburger-button.active{
-        display: block;
-    } 
+    .navbar .hamburger-button.menu-open {
+        display: none;
+    }
 }
 @media (max-width: 960px) {
     .text-xxl {
         font-size: 2.5rem !important
-    }
-}
-@media (max-width: 4000px){
-    .modal-content {
-        height: 500px !important; 
     }
 }
 @media (max-width: 850px){
@@ -383,9 +399,6 @@ img {
     .text-md {
         font-size: 0.9rem;
     }
-    .modal-content {
-        height: 500px !important
-      }
 }
 @media (max-width: 550px){
     .footer .card {
@@ -400,9 +413,6 @@ img {
     .text-xl {
         font-size: 1.3rem !important;
     }
-    .modal-content {
-        height: 500px !important
-      }
       .logo_image{
         width: 90px;
     }
@@ -498,7 +508,7 @@ td:first-child{
     margin: 24px 0 12px 0;
     position: relative;
   }
-  input[type=text], input[type=password] {
+  input[type=text], input[type=email], input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -519,7 +529,7 @@ td:first-child{
   }
   
   /* The Modal (background) */
-  .modal {
+  .modal {  
     overflow: auto;
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -527,10 +537,11 @@ td:first-child{
     left: 0;
     top: 0;
     width: 100%; /* Full width */
-    height: 100%; /* Full height */
+    height: 100% !important; /* Full height */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     padding-top: 60px;
+    max-height: 1000px;
   }
   
   /* Modal Content/Box */
@@ -539,11 +550,12 @@ td:first-child{
     margin: 1% auto 15% auto; 
     border: 3px solid #888;
     width: 80%;
-    height: 60%;
+    height: auto;
     min-width: 300px;
     max-width: 700px;
-    max-height: 600px;
-    min-height: 500px;
+    max-height: calc(100vh - 80px);
+    min-height: 0;
+    overflow-y: auto;
   }
   
   /* The Close Button (x) */
@@ -605,3 +617,73 @@ td:first-child{
       border-radius: 4px;
       color: #fff;
   }
+
+/* Login modal layout fix */
+#id01 .account-login-form.modal-content {
+    display: block;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: calc(100vh - 80px) !important;
+    overflow-y: auto;
+    padding-bottom: 24px;
+}
+#id01 .account-login-form > .container {
+    padding-bottom: 10px;
+}
+.account-login-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    clear: both;
+    margin-top: 20px;
+    width: 100%;
+}
+.account-login-actions .btn {
+    float: none !important;
+    position: static !important;
+    height: auto;
+    min-height: 50px;
+}
+@media (max-width: 500px) {
+    .account-login-actions {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+    .account-login-actions .btn {
+        width: 100%;
+    }
+}
+
+/* Password requirements checklist */
+.password-field-wrapper {
+    position: relative;
+}
+.password-rules {
+    display: block;
+    position: static;
+    margin: 8px 0 0;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: var(--light--color);
+}
+.password-rules.password-rules-visible {
+    display: block;
+}
+.password-rule {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 4px 0;
+    color: #d93025;
+}
+.password-rule input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    accent-color: var(--primary--color);
+}
+.password-rule.password-rule-valid {
+    color: var(--primary--color);
+}
