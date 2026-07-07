@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InfoPro - STL Queue</title>
+    <title>Sign In</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-    <link rel="stylesheet" href="css/idk1.css?v=4">
+    <link rel="stylesheet" href="css/idk.css?v=4">
     <link rel="shortcut icon" href="Images/logo-light.png" type="image/x-icon"> 
 </head>
 <body class="scroll-container">
@@ -39,7 +39,6 @@
           </div>
         </form>
       </div>  
-    <button onclick="topFunction()" id="myBtn" title="Go to top" class="text-lg"> <i class="fa-solid fa-arrow-up"></i> Top </button>
     <nav class="navbar">
         <div class="container"> 
             <div class="logo">
@@ -63,7 +62,7 @@
                         <a href="deque.html">STL Deque</a>
                     </li>
                     <li>
-                            <a class="btn btn-dark" onclick="document.getElementById('id01').style.display='block'"><i class="fas fa-unlock-keyhole"></i> Log In </a>
+                        <a class="btn btn-dark" onclick="document.getElementById('id01').style.display='block'"><i class="fas fa-unlock-keyhole"></i> Log In </a>
                     </li>
                     <li>
                         <a class="btn btn-primary " href="signup.html">
@@ -80,13 +79,15 @@
             </button>
             <div class="mobile-menu">
                 <ul>
-                    <li>
+                     <li>
                         <a class="btn btn-primary1 clsbtn">
                             Inchide bara de navigare <i class="fa-sharp fa-solid fa-arrow-right"></i>
                         </a>
                     </li>
                     <li>
-                            <a class="btn btn-dark clsbtn1" onclick="document.getElementById('id01').style.display='block'"><i class="fas fa-unlock-keyhole"></i> Log In </a>
+                            <a class="btn btn-dark clsbtn1" onclick="document.getElementById('id01').style.display='block'">
+                                <i class="fas fa-unlock-keyhole"></i> Log In 
+                            </a>
                     </li>
                     <li>
                         <a class="btn btn-primary " href="signup.html">
@@ -112,241 +113,52 @@
             </div>
         </div>
     </nav>
-
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-heading text-xxl">
-                    Cozile (queue) din C++
-                </h1>
-                <p class="text-lg">
-                    <b>Cuprins</b>
-                </p>
-                
-                <ul class="list1">
-                    <li class="text-md">
-                        Folosirea cozii
-                    </li>
-                    <li class="text-md">
-                        Modalități de implementare a cozii
-                    </li>
-                    <li class="text-md">
-                        Implementarea statică a cozii
-                    </li>
-                    <li class="text-md">
-                        Implementarea cozii folosind containerul specific din STL
-                    </li>
-                    <li class="text-md">
-                        Tabel cu toate funcțiile din cadrul cozilor
-                    </li>
-                </ul>
-                
-                <p><br></p>
-                <div>
-                    <p><br></p>
-                <img align="right" src="Images/cpp-queue.png" alt="Schemă" class="img2">
-                <p><br></p>
-                    <p class="text-md">
-                        O structură de date în coadă este un concept fundamental în informatică utilizat pentru stocarea și gestionarea datelor într-o anumită ordine. Urmează principiul „First in, First out” (FIFO), în care primul element adăugat în coadă este primul care trebuie eliminat. Cozile sunt utilizate în mod obișnuit în diverși algoritmi și aplicații pentru simplitatea și eficiența lor în gestionarea fluxului de date.
-                    </p>
-                    <p><br></p>
-                    <p class="text-md">
-                       Operațiile cu coada sunt similare cu modul în care funcționează coada la casa de bilete a unui cinematograf. Spectatorii vin și se așează în ordine la coadă, ordinea în care cumpără biletele este aceea în care au sosit. Deoarece operațiile de eliminare se fac în aceeași ordine ca cele de adăugare, coada este o structură de date de tip FIFO - First In First Out.
-                    </p>
-                    <p><br></p>
-                    
-                    <h3 class="text-lg"><b>În informatică se folosește coada în numeroase situații: </b></h3>
-                        <ul class="list1">
-                            <li class="text-md">
-                                Tipărirea documentelor la imprimantă se face printr-o coadă de așteptare - fiecare document se adaugă în coada imprimantei, iar tipărirea propriu-zisă se face în momentul eliminări din coadă;
-                            </li>
-                            <li class="text-md">
-                                Evaluarea soluțiilor la probleme de pe pbinfo.ro sau alte site-uri de acest tip se face pe principiul cozii, în ordinea în care au fost postate, ș.a.m.d
-                            </li>
-                        </ul>
-                    <p><br></p>
-                    <p class="text-md">
-                        Pentru declararea unei cozi trebuie inclusă biblioteca <b><code><</code>queue></b>, unde se află funcții de manipulare a acestui container, sau se poate implementa static ori dinamic, folosind liste din STL.
-                    </p>
-                </div>
-                
-                <h2 class="text-lg">
-                    <b>1. Cum folosim coada?</b>
-                </h2>
-                <p><br></p>
-                    <p class="text-md">
-                        Vom folosi coada atunci când trebuie să prelucrăm informații într-o ordine precisă, pe măsură ce acestea sunt identificate. Uneori, informațiile noi sunt determinate pe baza celor vechi, deja existente în coadă. Mecanismul se numește expansiune a cozii și constă în următoarele: 
-                    </p>
-                    <ul class="list1">
-                        <li class="text-md">
-                            Adăugăm în coadă informații inițiale;
-                        </li>
-                        <li class="text-md">
-                            Cât timp coada este nevidă (sau până când am determinat rezultatul căutat) scoatem din coadă un element;
-                        </li>
-                        <li class="text-md">
-                            Cu ajutorul său (sau nu) identificăm noi informații pe care le adăugăm în coadă.
-                        </li>
-                    </ul>
-                <h2 class="text-lg">
-                    <b>2. Modalități de implementare a cozii</b>
-                </h2>
-                <p><br></p>
-                <p class="text-md">
-                    La fel ca stivă, și coada poate fi implementată în limbajul C++ în mai multe moduri:
-                </p>
-                <ul class="list1">
-                    <li class="text-md">
-                        implementare statică, prin intermediul tablourilor unidimensionale;
-                    </li>
-                    <li class="text-md">
-                        implementare dinamică, prin intermediul listelor alocate dinamic; 
-                    </li>
-                    <li class="text-md">
-                        folosirea containerului <code><</code>queue> din STL.
-                    </li>
-                </ul>
-                <p><br></p>
-                <p class="text-md">
-                    Acest articol prezintă implementarea statică și folosirea STL.
-                </p>
-
-                <h2 class="text-lg">
-                    <b>3. Implementarea statică a cozii</b>
-                </h2>
-                <p class="text-md">
-                    Vom folosi un tablou unidimensional alocat static Q și două variabile simple prin care identificăm începutul (st) și sfârșitul cozii (dr). Numele variabilelor provine de la stânga și dreapta, deoarece adăugarea unui element în coadă se face adăugând un element în tabloul suport Q incrementând variabila dr, iar eliminarea se face mărind variabila st - ignorând elementele din față, fără a le șterge efectiv.
-                </p>
-                <p><br></p>
-                <p class="text-md">
-                    În continuare considerăm o coadă cu elemente întregi.
-                </p>
-                <p><br></p>
-                <p class="text-md">
-                    🟩 Declarații 
-                </p>
-                <pre class="code_cpp cm-s-default" data-lang="text/x-c++src" contenteditable="true" editable="true">
-<code>const int DIM = 1000; 
-int Q[DIM], st, dr;</code></pre>
-                <p><br></p>
-                <p class="text-md">
-                    🟩 Inițializarea cozii - crearea unei cozi vide cu ajutorul indicilor st și dr
-                </p>
-                <pre class="code_cpp cm-s-default" data-lang="text/x-c++src" contenteditable="true" editable="true">
-<code>st = 1 , dr = 0; </code></pre>
-                <p><br></p>
-                <p class="text-md">
-                    🟩 Verificare dacă este vidă coada 
-                </p>
-                <pre class="code_cpp cm-s-default" data-lang="text/x-c++src" contenteditable="true" editable="true">
-<code>st > dr // vidă 
-st <= dr // nevidă </code></pre>
-                <p><br></p>
-                <p class="text-md">
-                    🟩 Adăugarea unui element 
-                </p>
-                <pre class="code_cpp cm-s-default" data-lang="text/x-c++src" contenteditable="true" editable="true">
-<code>Q[++dr] = _VALOARE;</code></pre>
-                <p><br></p>
-                <p class="text-md">
-                    🟩 Eliminarea unui element 
-                </p>
-                <pre class="code_cpp cm-s-default" data-lang="text/x-c++src" contenteditable="true" editable="true">
-<code>st ++;</code></pre>
-                <p><br></p>
-                <p class="text-md">
-                    🟩 Identificarea valorii de la începutul cozii 
-                </p>
-                <pre class="code_cpp cm-s-default" data-lang="text/x-c++src" contenteditable="true" editable="true">
-<code>Q[st]</code></pre>
-                <p><br></p>
-                <h2 class="text-lg">
-                    <b>4. Implementarea cozii cu ajutorul containerului specific din STL</b>
-                </h2>
-                <p><br></p>
-                <p class="text-md">
-                    Standard Template Library pune la dispoziție un container adaptor specializat pentru gestionarea unei cozi, numit queue. Un obiect de tip queue încapsulează toate operațiile specifice cozii: 
-                </p>
-                <p><br></p>
-                <p class="text-md">
-                    🟩 Inițializarea cozii - crearea unei cozi vide 
-                </p>
-                <pre class="code_cpp cm-s-default" data-lang="text/x-c++src" contenteditable="true" editable="true">
-<code>std::queue<code><</code>int> Q;</code></pre>
-                <p><br></p>
-                <p class="text-md">
-                    🟩 Verificare dacă este vidă coada 
-                </p>
-                <pre class="code_cpp cm-s-default" data-lang="text/x-c++src" contenteditable="true" editable="true">
-<code>Q.empty() // true dacă este vidă, false în caz contrar </code></pre>
-                <p><br></p>
-                <p class="text-md">
-                    🟩 Adăugarea unui element 
-                </p>
-                <pre class="code_cpp cm-s-default" data-lang="text/x-c++src" contenteditable="true" editable="true">
-<code>Q.push( _VALOARE );</code></pre>
-                <p><br></p>
-                <p class="text-md">
-                    🟩 Eliminarea unui element 
-                </p>
-                <pre class="code_cpp cm-s-default" data-lang="text/x-c++src" contenteditable="true" editable="true">
-<code>Q.pop();</code></pre>
-                <p><br></p>
-                <p class="text-md">
-                    🟩 Identificarea valorii de la începutul cozii
-                </p>
-                <pre class="code_cpp cm-s-default" data-lang="text/x-c++src" contenteditable="true" editable="true">
-<code>Q.front()</code></pre>
-                <p><br></p>
-
-                <h2 class="text-lg">
-                    <b>5. Toate funcțiile importante ale clasei std::queue din C++</b>
-                </h2>
-                <table>
-                    <tr>
-                      <th><p><span class="text-md"><b>Funcția</b></span></p></th>
-                      <th><span class="text-md"><b>Descriere</b></span></th>
-                    </tr>
-                    <tr>
-                      <td style="color:#265f0c; text-align: center" class="text-md">empty()</td>
-                      <td style="text-align: center">Returnează true dacă queue-ul e gol, altfel returnează false</td>
-                     </tr>
-                      <tr>
-                        <td style="color:#265f0c; text-align: center" class="text-md">size()</td>
-                        <td style="text-align: center" >Returnează dimensiunea queue-ului</td>
-                      </tr>
-                      <tr>
-                        <td style="color:#265f0c; text-align: center" class="text-md">swap()</td>
-                        <td style="text-align: center" >Interschimbă continutul a două queue-uri dacă acestea sunt de același tip de date, deși lungimea diferă</td>
-                      </tr>
-                      <tr>
-                        <td style="color:#265f0c; text-align: center" class="text-md">emplace()</td>
-                        <td style="text-align: center">Inserează un nou element în containerul queue-ului, noul element este adăugat la finalul queue-ului</td>
-                      </tr>
-                      <tr>
-                        <td style="color:#265f0c; text-align: center" class="text-md">front()</td>
-                        <td style="text-align: center" >Returneaza un punct de referință la primul al queue-ului</td>
-                      </tr>
-                      <tr>
-                        <td style="color:#265f0c; text-align: center" class="text-md">back()</td>
-                        <td style="text-align: center">Returneaza un punct de referință la ultimul al queue-ului</td>
-                      </tr>
-                      <tr>
-                        <td style="color:#265f0c; text-align: center" class="text-md">push(g)</td>
-                        <td style="text-align: center">Adaugă elementul ”g” la finalul queue-ului</td>
-                      </tr>
-                      <tr>
-                        <td style="color:#265f0c; text-align: center" class="text-md">pop()</td>
-                        <td style="text-align: center">Șterge primul element al queue-ului</td>
-                      </tr>
-                  </table>
-                <p class="text-md">
-                    
-                </p>
-                <p class="hero text-xl">
-                    
-                    </ul>
-                </p>
+                <form class="account-signup-form" novalidate>
+                    <div class="container">
+                      <h1 class="hero-heading text-xxl">Înregistrare</h1>
+                      <p class="text-md">Completați acest formular pentru a vă crea un cont.</p>
+                      <p><br></p>
+                      <label class="text-md" for="username"><b>Nume utilizator</b></label>
+                      <input class="text-md" id="username" type="text" placeholder="Introduceți un nume de utilizator" name="username" autocomplete="username" minlength="3" required>
+                      <p><br></p>
+                      <label class="text-md" for="signup-email"><b>Email</b></label>
+                      <input class="text-md" id="signup-email" type="email" placeholder="Introduceți email-ul dvs." name="email" autocomplete="email" required>
+                      <p><br></p>
+                      <label class="text-md" for="signup-password"><b>Parolă</b></label>
+                      <div class="password-field-wrapper">
+                        <input class="text-md" id="signup-password" type="password" placeholder="Introduceți parola" name="psw" autocomplete="new-password" minlength="8" required>
+                        <div class="password-rules" aria-live="polite">
+                          <label class="password-rule text-sm" data-rule="length">
+                            <input type="checkbox" disabled> Cel puțin 8 caractere
+                          </label>
+                          <label class="password-rule text-sm" data-rule="number">
+                            <input type="checkbox" disabled> Cel puțin 1 număr
+                          </label>
+                          <label class="password-rule text-sm" data-rule="special">
+                            <input type="checkbox" disabled> Cel puțin 1 caracter special
+                          </label>
+                        </div>
+                      </div>
+                      <p><br></p>
+                      <label class="text-md" for="psw-repeat"><b>Reintroduceți parola</b></label>
+                      <input class="text-md" id="psw-repeat" type="password" placeholder="Reintroduceți parola" name="psw-repeat" autocomplete="new-password" minlength="8" required>
+                      <p><br></p>
+                      <label>
+                        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Ține-mă logat pe acest browser
+                      </label>
+                  
+                      <p>Creându-vă un cont, sunteți de acord cu <a href="#" style="color:dodgerblue"> Termenii & Condițiile</a>.</p>
+                  
+                      <p class="account-message signup-message text-sm" aria-live="polite"></p>
+                      <div class="clearfix">
+                        <a href="index.html" class="btn btn-dark text-md">Anulează</a>
+                        <button type="submit" class="signupbtn btn btn-primary text-md">Înscrie-mă</button>
+                      </div>
+                    </div>
+                  </form>
             </div>
         </div>
     </section>
